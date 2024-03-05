@@ -1,0 +1,343 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sidda Musical Acadamy</title>
+    <!-- Google fonts -->
+    <link href=//fonts.googleapis.com/css2?family=Londrina+Outline&display=swap" rel="stylesheet">
+    <!-- Template CSS Style link -->
+    <link rel="stylesheet" href="/css/style-starter.css">
+</head>
+
+<body>
+    <!-- top header -->
+    <%- include('./ejs-partials/top-header') %>
+    <!-- //top header -->
+    <!-- header -->
+    <header id="site-header" class="fixed-top">
+        <div class="container">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="index.html">
+              <!-- <i class="fas fa-music me-1"></i>Sidda Musical Acadamy -->
+              <img src="/images/logo/Logo.png" alt="Logo" style="height: 50px" />
+              <span style="color: #9b3b41;">SIDDA</span> <span style="color: #fbe4a2;">Musical Academy</span>
+            </a>
+            <button
+              class="navbar-toggler collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarScroll"
+              aria-controls="navbarScroll"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+              <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+              <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/about">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/classes">Classes</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Blog</a>
+                  </li>
+              </ul>
+            </div>
+            <!-- toggle switch for light and dark theme -->
+            <!-- <div class="cont-ser-position">
+                      <nav class="navigation">
+                          <div class="theme-switch-wrapper">
+                              <label class="theme-switch" for="checkbox">
+                                  <input type="checkbox" id="checkbox">
+                                  <div class="mode-container">
+                                      <i class="gg-sun"></i>
+                                      <i class="gg-moon"></i>
+                                  </div>
+                              </label>
+                          </div>
+                      </nav>
+                  </div> -->
+            <!-- //toggle switch for light and dark theme -->
+          </nav>
+        </div>
+      </header>
+    <!-- //header -->
+
+    <!-- banner section -->
+    <div class="slider">
+        <div class="slide current">
+            <div class="bg-layer">
+                <div class="content">
+                    
+                   
+                    <h6>Awaken Possibility</h6>
+                    <h3>Music for Everyone</h3>
+                    <a href="/contact" class="btn btn-style mt-4">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="bg-layer">
+                <div class="content">
+                    <h6>Start Listening</h6>
+                    <h3>Feel the Rhythm</h3>
+                    <a href="/contact" class="btn btn-style mt-4">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="bg-layer">
+                <div class="content">
+                    <h6>Discover Your Talent</h6>
+                    <h3>Pick Your Instrument</h3>
+                    <a href="/contact" class="btn btn-style mt-4">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="buttons">
+        <button id="prev"><i class="fas fa-arrow-left"></i></button>
+        <button id="next"><i class="fas fa-arrow-right"></i></button>
+    </div>
+    <!-- //banner section -->
+
+    <!-- about section -->
+    <%- include('./ejs-partials/about') %>
+    <!-- //about section -->
+
+    <!-- classes section -->
+    <section class="w3l-classes py-5" id="classes">
+        <div class="container py-lg-5 py-md-4 py-2">
+            <h3 class="title-style text-center">Our Best Music <span>Classes</span></h3>
+            <div class="row text-center justify-content-center">
+                <div class="col-lg-4 col-md-6 mt-lg-5 mt-4">
+                    <div class="grids-1 box-wrap p-lg-3">
+                        <div class="icon">
+                            
+                            <!-- <i class="fas fa-guitar"></i> -->
+                            <img src="/images/icons/icons8-guitar-96.png" alt="">
+                        </div>
+                        <h4><a href="#" class="title-head mt-4 mb-2">Guitar</a></h4>
+                        <p class="text-para">Learn to play the guitar with expert instruction, catering to
+                            all skill levels from beginners to advanced players. </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-lg-5 mt-4">
+                    <div class="grids-1 box-wrap p-lg-3">
+                        <div class="icon ">
+                            <img src="/images/icons/icons8-drum-96.png" alt="">
+                        </div>
+                        <h4><a href="#" class="title-head mt-4 mb-2">Drum</a></h4>
+                        <p class="text-para">Discover rhythm and percussion with dynamic drum lessons
+                            designed to enhance coordination, timing, and musicality. </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-4">
+                    <div class="grids-1 box-wrap p-lg-3">
+                        <div class="icon">
+                            
+                            <img src="/images/icons/icons8-violin-96.png" alt="">
+                        </div>
+                        <h4><a href="#" class="title-head mt-4 mb-2">Violin</a></h4>
+                        <p class="text-para"> Explore the beauty of the violin with personalized lessons
+                            focusing on technique, musical expression, and repertoire. </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-lg-5 mt-4">
+                    <div class="grids-1 box-wrap p-lg-3">
+                        <div class="icon">
+                            <img src="/images/icons/pad.png" alt="">
+                        </div>
+                        <h4><a href="#" class="title-head mt-4 mb-2">Electrical Pad</a></h4>
+                        <p class="text-para">
+                            Dive into the world of electronic music production with
+                  specialized courses in creating beats, melodies, and
+                  soundscapes using digital pad controllers. </p>
+                    </div>
+                </div>
+               
+                <div class="col-lg-4 col-md-6 mt-4">
+                    <div class="grids-1 box-wrap p-lg-3">
+                        <div class="icon">
+                            <!-- <i class="fas fa-play"></i> -->
+                            <img src="/images/icons/icons8-piano-96.png" alt="">
+                        </div>
+                        <h4><a href="#" class="title-head mt-4 mb-2">Piano</a></h4>
+                        <p class="text-para"> Master the piano through comprehensive lessons tailored to
+                            individual learning styles, covering technique, theory, and
+                            repertoire
+                            eos. </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-4">
+                    <div class="grids-1 box-wrap p-lg-3">
+                        <div class="icon">
+                            <!-- <i class="fas fa-headphones-alt"></i> -->
+                            <img src="/images/icons/icons8-singing-96.png" alt="">
+                        </div>
+                        <h4><a href="#" class="title-head mt-4 mb-2">Karnatic & Western Singing</a></h4>
+                        <p class="text-para">Develop vocal proficiency in both Karnatic and Western singing traditions through structured training emphasizing tone, range, dynamics, and performance skills.
+
+    
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //classes section -->
+
+    <!-- homeblock1 section -->
+    <section class="w3l-homeblock1 py-5">
+        <div class="container py-lg-5 py-md-4 py-2">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <h3 class="title-style">Unlock Your Musical Journey
+                    <h6 class="sub-title mt-md-4 mt-md-5 mt-4"> Where Silence Ends,  Learning Begins.</h6>
+                    <a href="/classes" class="btn btn-style mt-lg-5 mt-4">View Classes</a>
+                </div>
+                <div class="col-lg-7 mt-lg-0 mt-5 ps-lg-5">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="column-w3-img position-relative">
+                                <a href="#image"><img src="/images/learn/image-1.jpeg" alt=""
+                                        class="radius-image img-fluid"></a>
+                            </div>
+                            <div class="column-w3-img position-relative mt-4">
+                                <a href="#image"><img src="/images/learn/image-4.jpeg" alt=""
+                                        class="radius-image img-fluid"></a>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="column-w3-img position-relative">
+                                <a href="#image"><img src="/images/learn/image-3.jpeg" alt=""
+                                        class="radius-image img-fluid"></a>
+                            </div>
+                            <div class="column-w3-img position-relative mt-4">
+                                <a href="#image"><img src="/images/learn/image-2.jpeg" alt=""
+                                        class="radius-image img-fluid"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //homeblock1 section -->
+
+    <!-- video section -->
+    <section class="w3l-video-sec" id="video">
+        <div class="container">
+            <div class="row w3l-video">
+                <div class="col-12">
+                    <div class="videow3-right">
+                        <div class="w3l-index5 py-5">
+                            <div class="history-info align-self text-center py-5">
+                                <div class="position-relative py-5">
+                                    <a href="#small-dialog1"
+                                        class="popup-with-zoom-anim play-view text-center position-absolute">
+                                        <span class="video-play-icon">
+                                            <span class="fa fa-play"></span>
+                                        </span>
+                                    </a>
+                                    <!-- dialog itself, mfp-hide class is required to make dialog hidden -->
+                                    <div id="small-dialog1" class="zoom-anim-dialog mfp-hide">
+                                        <!-- <iframe src="https://player.vimeo.com/video/12881072?h=9f0439706"
+                                            frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
+                                            allowfullscreen></iframe> -->
+                                            <iframe src="https://www.youtube.com/embed/ANeBrncHAJE?rel=0&autoplay=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //video section -->
+
+    <!-- join section -->
+    <section class="w3l-whyblock py-5">
+        <div class="container py-lg-5 py-md-4 py-2">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <img src="/images/learn/handsome-young-sitting-chair-holding-guitar.jpg" alt="" class="img-fluid radius-image">
+                </div>
+                <div class="col-lg-6 ps-xl-5 ps-lg-4 mt-lg-0 mt-5">
+                    <h3 class="title-style mb-4">Enroll in our <span>Musical classes </span> today!</h3>
+                    <p>Begin your musical adventure with Sidda Musical Academy. Our expert instructors and comprehensive curriculum provide the perfect foundation for aspiring musicians of all levels. Join us today and start your journey towards musical excellence!</p>
+                    <div class="two-grids mt-5">
+                        <div class="grids_info">
+                            <i class="fas fa-user-graduate"></i>
+
+                            <div class="detail">
+                                <h4>Personalized Learning Experience:</h4>
+                                <p>Each student receives personalized attention and instruction tailored to their individual learning style and musical goals.</p>
+                            </div>
+                        </div>
+                        <div class="grids_info mt-xl-5 mt-4">
+                            <i class="fas fa-microphone-alt"></i>
+                            <div class="detail">
+                                <h4>Performance Opportunities: </h4>
+                                <p>We offer regular performance opportunities for our students to showcase their progress and talents in front of a supportive audience.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //join section -->
+
+
+
+    <!-- button with content section -->
+    <%- include('./ejs-partials/call-to-action') %>
+    <!-- //button with content section -->
+
+    <!-- footer -->
+    <%- include('./ejs-partials/footer') %>
+    <!-- //footer -->
+
+    <!-- Js scripts -->
+    <!-- move top -->
+    <button onclick="topFunction()" id="movetop" title="Go to top">
+        <span class="fas fa-level-up-alt" aria-hidden="true"></span>
+    </button>
+  <!-- Modal for YouTube video -->
+  <div id="youtubeModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeYouTubeModal()">&times;</span>
+        <div id="player"></div>
+    </div>
+</div>
+    
+
+
+    <!-- common jquery plugin -->
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/jquery.magnific-popup.min.js"></script>
+    <script src="/js/theme-change.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/ytplayer.js"></script>
+</body>
+
+</html>
