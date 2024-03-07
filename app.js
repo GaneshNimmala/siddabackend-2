@@ -32,7 +32,7 @@ app.set("views", "views"); // Specify the views directory
 
 app.use("/", indexRouter);
 app.use("/about", aboutRoute);
-app.use("/classes", classesRoute);
+app.use("/class", classesRoute);
 app.use("/contact", contactRoute);
 // Add more route middleware as needed...
 
@@ -42,7 +42,7 @@ app.use((err, req, res, next) => {
   res.status(500).send("Something broke!");
 });
 
-const PORT = process.env.PORT || 3003;
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

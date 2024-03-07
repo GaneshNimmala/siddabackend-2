@@ -9,124 +9,81 @@
     <link href=//fonts.googleapis.com/css2?family=Londrina+Outline&display=swap"
     rel="stylesheet">
     <!-- Template CSS Style link -->
-    <link rel="stylesheet" href="/css/style-starter.css" />
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/dummy.css" />
+    <link rel="stylesheet" href="/css/fontawesome.css" />
   </head>
 
   <body>
-    <!-- top header -->
-    <%- include('./ejs-partials/top-header') %>
-    <!-- //top header -->
+    <!--Header-->
+    <%- include('./ejs-partials/header') %>
+    <!--Header-->
 
-    <!-- header -->
-    <header id="site-header" class="fixed-top">
-      <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light">
-          <a class="navbar-brand" href="index.html">
-            <!-- <i class="fas fa-music me-1"></i>Sidda Musical Acadamy -->
-            <img src="/images/logo/Logo.png" alt="Logo" style="height: 50px" />
-            <span style="color: #9b3b41">SIDDA</span>
-            <span style="color: #fbe4a2">Musical Academy</span>
-          </a>
-          <button
-            class="navbar-toggler collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarScroll"
-            aria-controls="navbarScroll"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
-            <span class="navbar-toggler-icon fa icon-close fa-times"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarScroll">
-            <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/about">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/classes">Classes</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="/contact">Contact</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
-              </li>
-            </ul>
-          </div>
-          <!-- toggle switch for light and dark theme -->
-          <!-- <div class="cont-ser-position">
-                    <nav class="navigation">
-                        <div class="theme-switch-wrapper">
-                            <label class="theme-switch" for="checkbox">
-                                <input type="checkbox" id="checkbox">
-                                <div class="mode-container">
-                                    <i class="gg-sun"></i>
-                                    <i class="gg-moon"></i>
-                                </div>
-                            </label>
-                        </div>
-                    </nav>
-                </div> -->
-          <!-- //toggle switch for light and dark theme -->
-        </nav>
-      </div>
-    </header>
-    <!-- //header -->
-
-    <!-- banner section -->
-    <%- include('./ejs-partials/breadcumbs', {path:"Contact US"}) %>
-    <!-- //about section -->
+    <!--Banner-->
+    <%- include('./ejs-partials/breadcumbs', {path:"Contact Us"}) %>
+    <!--Banner-->
 
     <!-- contact block -->
     <section class="w3l-contact py-5" id="contact">
       <div class="container py-md-5 py-4">
         <h3 class="title-style text-center mb-5">Contact <span>Us</span></h3>
         <div class="row contact-block">
-          <div class="col-md-7 contact-right">
-            <form action="" method="post" class="signin-form">
-              <div class="input-grids">
-                <div class="row">
-                  <div class="col-sm-6">
-                    <input
-                      type="text"
-                      name="w3lName"
-                      id="w3lName"
-                      placeholder="Your Name"
-                      class="contact-input"
-                      required=""
-                    />
-                  </div>
-                  <div class="col-sm-6">
-                    <input
-                      type="email"
-                      name="w3lSender"
-                      id="w3lSender"
-                      placeholder="Your Email"
-                      class="contact-input"
-                      required=""
-                    />
-                  </div>
+          <div
+            id="flash-messages"
+            class="fade-out<% if (!messages || messages.length === 0) { %> hidden<% } %>"
+          >
+            <% if (messages && messages.length > 0) { %>
+            <div class="alert alert-success" role="alert">
+              <%= messages[0] %>
+              <!-- Display the first (and only) message -->
+            </div>
+            <% } %>
+          </div>
+          <div
+            class="col-md-7 contact-right mx-auto mx-sm-0 mx-md-auto mx-lg-auto mx-xl-auto"
+          >
+            <form action="/contact" method="post" class="contact-form">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <input
+                    type="text"
+                    name="name"
+                    id="w3lName"
+                    placeholder="Your Name"
+                    class="form-control p-3"
+                    required
+                  />
                 </div>
-                <input
-                  type="number"
-                  name="number"
-                  id="number"
-                  placeholder="Mobile Number"
-                  class="contact-input"
-                  required
-                />
-                <div class="mb-4">
+                <div class="col-md-6 mb-3">
+                  <input
+                    type="number"
+                    name="number"
+                    id="number"
+                    placeholder="Mobile Number"
+                    class="form-control p-3"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <input
+                    type="email"
+                    name="email"
+                    id="w3lSender"
+                    placeholder="Your Email"
+                    class="form-control p-3"
+                    required
+                  />
+                </div>
+                <div class="col-md-6 mb-3">
                   <select
-                    class="form-control selection form-select p-3 border-0"
-                    name="service"
+                    class="form-select p-3 border-0 form-control"
+                    name="classes"
+                    required
                   >
-                    <option value="Type Of Service" class="">
-                      Select Instrument You Want To Learn
+                    <option value="Type Of Service" selected>
+                      Select Class
                     </option>
                     <option value="Guitar">Guitar Class</option>
                     <option value="Violin">Violin Class</option>
@@ -139,16 +96,25 @@
                   </select>
                 </div>
               </div>
-              <div class="form-input">
+              <div class="mb-3">
                 <textarea
-                  name="w3lMessage"
+                  name="message"
                   id="w3lMessage"
                   placeholder="Type your message here"
-                  required=""
+                  class="form-control p-3"
+                  required
                 ></textarea>
               </div>
               <div class="text-start">
-                <button class="btn btn-style btn-style-3">Send Message</button>
+                <div class="text-center mt-auto">
+                  <button
+                    type="submit"
+                    class="btn btn-primary custom-button"
+                    style="background-color: grey"
+                  >
+                    Send Message
+                  </button>
+                </div>
               </div>
             </form>
           </div>
@@ -196,20 +162,25 @@
         </div>
       </div>
     </section>
+    <div class="whatsapp&callbutton">
+      <a
+        href="https://wa.me/9618696630"
+        target="_blank"
+        class="whatsapp-button"
+      >
+        <img
+          src="/images/Digital_Stacked_Green.png"
+          alt="WhatsApp"
+          width="50px"
+        />
+      </a>
+    </div>
     <!-- map -->
     <div class="map">
-      <!-- <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317718.69319292053!2d-0.3817765050863085!3d51.528307984912544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C+UK!5e0!3m2!1sen!2spl!4v1562654563739!5m2!1sen!2spl"
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.4826156151075!2d78.43163397389284!3d17.436599983459!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91f6e0a89593%3A0x10009c6bd8611197!2sSidda%20Musical%20Academy!5e0!3m2!1sen!2sin!4v1709791875941!5m2!1sen!2sin"
         width="100%"
         height="400"
-        frameborder="0"
-        style="border: 0px"
-        allowfullscreen=""
-      ></iframe> -->
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d256.9519745916162!2d78.43404736167034!3d17.436497351170118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91f6e0a89593%3A0x10009c6bd8611197!2sSidda%20Musical%20Academy!5e0!3m2!1sen!2sin!4v1709621661714!5m2!1sen!2sin"
-        width="600"
-        height="450"
         style="border: 0"
         allowfullscreen=""
         loading="lazy"
@@ -217,48 +188,74 @@
       ></iframe>
     </div>
     <!-- //contact block -->
-
     <!-- footer -->
-    <%- include('./ejs-partials/footer') %>
+    <footer class="w3l-footer9">
+      <div class="footer-inner-main py-5">
+        <div class="container pt-lg-5 pt-md-4 pt-2 pb-2">
+          <div class="row">
+            <div class="col-lg-4 sub-one-left pe-lg-5">
+              <h6>About</h6>
+              <p class="footer-phny">
+                At Sidda Musical Academy, we are passionate about nurturing
+                musical talent and providing a platform for individuals to
+                explore their creativity and express themselves through music.
+              </p>
+              <div class="columns-2 mt-lg-5 mt-4">
+                <ul class="social" style="padding-left: 0px">
+                  <li>
+                    <a href="https://www.instagram.com/awing_records/"
+                      ><span class="fab fa-instagram"></span
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.youtube.com/channel/UC1aTjtvHA3AoDJM_P-qDjTg"
+                      ><span class="fab fa-youtube"></span
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-4 col-6 sub-two-right mt-lg-0 mt-5">
+              <h6>Links</h6>
+              <ul style="padding-left: 0px">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Classes</a></li>
+                <li><a href="#">Blog Posts</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+
+            <div class="col-lg-4 sub-one-left mt-lg-0 mt-5">
+              <h6>Address</h6>
+              <ul style="padding-left: 0px">
+                <li class="w3address-holder-grids">
+                  <div class="w3address-text">
+                    <p>
+                      8-3-224/1A Kamala Residency, Yousufguda, Yousufguda,
+                      Hyderabad - 500045 (Opp. Play Baby Toys & Sports, Near
+                      Metro Piller No C 1496)
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="copyright-footer mt-lg-5 mt-sm-4 mt-2 text-center">
+            <p class="copy-text">
+              &copy; 2024 Sidda Musical Acadamy. All rights reserved. Design by
+              <a href="https://WWW.ibharatmedia.com" target="_blank">
+                I BHARAT Media</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <!-- //footer -->
 
-    <!-- Js scripts -->
-    <!-- move top -->
-    <button onclick="topFunction()" id="movetop" title="Go to top">
-      <span class="fas fa-level-up-alt" aria-hidden="true"></span>
-    </button>
-
-    <!-- common jquery plugin -->
-    <script src="/js/jquery-3.3.1.min.js"></script>
-    <script src="/js/jquery.magnific-popup.min.js"></script>
-    <script src="/js/theme-change.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/script.js"></script>
-    <script>
-      $(window).on("scroll", function () {
-        var scroll = $(window).scrollTop();
-
-        if (scroll >= 80) {
-          $("#site-header").addClass("nav-fixed");
-        } else {
-          $("#site-header").removeClass("nav-fixed");
-        }
-      });
-
-      //Main navigation Active Class Add Remove
-      $(".navbar-toggler").on("click", function () {
-        $("header").toggleClass("active");
-      });
-      $(document).on("ready", function () {
-        if ($(window).width() > 991) {
-          $("header").removeClass("active");
-        }
-        $(window).on("resize", function () {
-          if ($(window).width() > 991) {
-            $("header").removeClass("active");
-          }
-        });
-      });
-    </script>
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

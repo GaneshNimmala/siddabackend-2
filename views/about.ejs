@@ -9,87 +9,26 @@
     <link href=//fonts.googleapis.com/css2?family=Londrina+Outline&display=swap"
     rel="stylesheet">
     <!-- Template CSS Style link -->
-    <link rel="stylesheet" href="/css/style-starter.css" />
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/dummy.css" />
+    <link rel="stylesheet" href="/css/fontawesome.css" />
   </head>
 
   <body>
-    <!-- top header -->
-    <%- include('./ejs-partials/top-header') %>
-    <!-- //top header -->
+    <!--Header-->
+    <%- include('./ejs-partials/header') %>
+    <!--Header-->
 
-    <!-- header -->
-    <header id="site-header" class="fixed-top">
-      <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light">
-          <a class="navbar-brand" href="index.html">
-            <!-- <i class="fas fa-music me-1"></i>Sidda Musical Acadamy -->
-            <img src="/images/logo/Logo.png" alt="Logo" style="height: 50px" />
-            <span style="color: #9b3b41">SIDDA</span>
-            <span style="color: #fbe4a2">Musical Academy</span>
-          </a>
-          <button
-            class="navbar-toggler collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarScroll"
-            aria-controls="navbarScroll"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
-            <span class="navbar-toggler-icon fa icon-close fa-times"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarScroll">
-            <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="/about">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/classes">Classes</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/contact">Contact</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
-              </li>
-            </ul>
-          </div>
-          <!-- toggle switch for light and dark theme -->
-          <!-- <div class="cont-ser-position">
-                    <nav class="navigation">
-                        <div class="theme-switch-wrapper">
-                            <label class="theme-switch" for="checkbox">
-                                <input type="checkbox" id="checkbox">
-                                <div class="mode-container">
-                                    <i class="gg-sun"></i>
-                                    <i class="gg-moon"></i>
-                                </div>
-                            </label>
-                        </div>
-                    </nav>
-                </div> -->
-          <!-- //toggle switch for light and dark theme -->
-        </nav>
-      </div>
-    </header>
-    <!-- //header -->
-
-    <!-- banner section -->
-    <%- include('./ejs-partials/breadcumbs', {path:"About"}) %>
-    <!-- //about section -->
-
-    <!-- about section -->
+    <!-- inner banner -->
+    <%- include('./ejs-partials/breadcumbs',{path:"About"}) %>
+    <!-- //inner banner -->
     <section class="w3l-about py-5" id="about">
       <div class="container py-lg-5 py-md-4 py-2">
         <div class="row align-items-center">
           <div class="col-lg-6 section-width pe-xl-5 pt-lg-4">
-            <h3 class="title-style">
-              Welcome to <span>SIDDA Musical Academy</span>
-            </h3>
+            <h2 class="title-style">
+              About <span>SIDDA Musical Acadamy</span>
+            </h2>
             <p class="mt-4">
               At Sidda Musical Academy, we are passionate about nurturing
               musical talent and providing a platform for individuals to explore
@@ -103,7 +42,7 @@
           <div class="col-lg-6 history-info mt-lg-0 mt-5 pt-md-4 pt-2">
             <div class="position-relative img-border">
               <img
-                src="/images/about/about1.jpg"
+                src="/images/hero_section/about.png"
                 class="img-fluid radius-image"
                 alt="video-popup"
               />
@@ -112,54 +51,23 @@
         </div>
       </div>
     </section>
-
-    <!-- //about section -->
-
-    <!-- button with content section -->
-    <%- include('./ejs-partials/call-to-action') %>
-    <!-- //button with content section -->
-
+    <div class="whatsapp&callbutton">
+      <a
+        href="https://wa.me/9618696630"
+        target="_blank"
+        class="whatsapp-button"
+      >
+        <img
+          src="/images/Digital_Stacked_Green.png"
+          alt="WhatsApp"
+          width="50px"
+        />
+      </a>
+    </div>
     <!-- footer -->
     <%- include('./ejs-partials/footer') %>
     <!-- //footer -->
 
-    <!-- Js scripts -->
-    <!-- move top -->
-    <button onclick="topFunction()" id="movetop" title="Go to top">
-      <span class="fas fa-level-up-alt" aria-hidden="true"></span>
-    </button>
-
-    <!-- common jquery plugin -->
-    <script src="/js/jquery-3.3.1.min.js"></script>
-    <script src="/js/jquery.magnific-popup.min.js"></script>
-    <script src="/js/theme-change.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/script.js"></script>
-    <script>
-      $(window).on("scroll", function () {
-        var scroll = $(window).scrollTop();
-
-        if (scroll >= 80) {
-          $("#site-header").addClass("nav-fixed");
-        } else {
-          $("#site-header").removeClass("nav-fixed");
-        }
-      });
-
-      //Main navigation Active Class Add Remove
-      $(".navbar-toggler").on("click", function () {
-        $("header").toggleClass("active");
-      });
-      $(document).on("ready", function () {
-        if ($(window).width() > 991) {
-          $("header").removeClass("active");
-        }
-        $(window).on("resize", function () {
-          if ($(window).width() > 991) {
-            $("header").removeClass("active");
-          }
-        });
-      });
-    </script>
+    <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
